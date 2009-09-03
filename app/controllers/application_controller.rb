@@ -7,4 +7,14 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+ 
+  private
+  def login
+    if session[:user_id].nil?
+      authenticate_or_request_with_http_basic do |u, p|
+        
+        redirect_to :controller => :upload, :action => :create
+      end
+    end
+  end
 end
