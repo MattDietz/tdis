@@ -5,16 +5,16 @@ class User < ActiveRecord::Base
     self.password = self.salted_password(self.password)
   end
 
-  def self.find_matching_user(name)
+  def self.find_matching_user(name, pwd)
     u = find(:first, :conditions => ["name = ?", name])
-    u if u && u.password_matches?
+    u if u && u.password_matches?(pwd)
   end
 
   def password_matches?(passwd)
-    self.password == self.salted_password(passwd)
+    self.password == self.salted_password(passwd, salt)
   end
 
-  def self.salted_password(passwd)
+  def salted_password(passwd, salt)
     MD5.hexdigest("#{passwd}#{salt}")
   end
 

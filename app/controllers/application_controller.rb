@@ -12,8 +12,12 @@ class ApplicationController < ActionController::Base
   def login
     if session[:user_id].nil?
       authenticate_or_request_with_http_basic do |u, p|
-        
-        redirect_to :controller => :upload, :action => :create
+        session[:user_id] = User.find_matching_user(u, p)
+        if session[:user_id]
+          redirect_to :controller => :upload, :action => :create
+        else
+          false
+        end
       end
     end
   end
