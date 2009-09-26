@@ -2,7 +2,7 @@ require 'md5'
 class User < ActiveRecord::Base
   def before_create
     self.salt = MD5.hexdigest "BORKBORKTHEDAYISSHOTBORK#{Time.now.utc}"
-    self.password = self.salted_password(self.password)
+    self.password = salted_password(password, salt)
   end
 
   def self.find_matching_user(name, pwd)

@@ -1,0 +1,2 @@
+module RoflHelper
+end

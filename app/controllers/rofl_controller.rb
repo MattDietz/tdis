@@ -1,4 +1,4 @@
-class UploadController < ApplicationController
+class RoflController < ApplicationController
   before_filter :login, :except => [ :create ]
 
   def create
