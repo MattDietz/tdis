@@ -1,2 +1,2 @@
-module RoflHelper
+module RoflsHelper
 end
