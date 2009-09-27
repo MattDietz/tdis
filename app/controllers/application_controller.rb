@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       authenticate_or_request_with_http_basic do |u, p|
         session[:user_id] = User.find_matching_user(u, p)
         if session[:user_id]
-          redirect_to :controller => :upload, :action => :create
+          redirect_to :controller => :rofls, :action => :new
         else
           false
         end
