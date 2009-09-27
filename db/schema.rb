@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090903015133) do
+ActiveRecord::Schema.define(:version => 20090926225833) do
+
+  create_table "rofls", :force => true do |t|
+    t.string  "caption"
+    t.string  "content_type"
+    t.string  "filename"
+    t.integer "size"
+    t.integer "parent_id"
+    t.string  "thumbnail"
+    t.integer "width"
+    t.integer "height"
+    t.integer "db_file_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
