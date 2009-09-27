@@ -25,7 +25,7 @@ set :repository, "ssh://matt@www.buriedincode.com/home/matt/code/ruby/rofldubbs"
 # the files that have changed. 
 # set :deploy_via, :rsync_with_remote_cache
 # set :rsync_options, '-az --delete --exclude=.git --delete-excluded'
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 
 set :scm, :git
 set :scm_username, "matt"
