@@ -16,7 +16,7 @@ mongrel_cluster_config =
 set :application, "thedayisshot"
 set :destination, "www.thedayisshot.com"
 set :port, 22
-set :repository, "ssh://matt@www.buriedincode.com/home/matt/code/ruby/rofldubbs"
+set :repository, "git@github.com:Cerberus98/tdis.git"
 # You can also use the following lines to just copy from your local machine
 # set :repository, 'file:///mylocalrepopath'
 # set :deploy_via, :copy
