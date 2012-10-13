@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   layout 'rofls'
   def index
-    @rofls = Rofl.find :all
+    @rofls = Rofl.paginate(:page => params[:page], :per_page => 30, :order => "id desc")
   end
 
   def random

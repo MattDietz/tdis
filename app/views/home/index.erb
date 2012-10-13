@@ -1,3 +1,4 @@
 <% @rofls.each do |rofl| %>
 <%=   image_tag rofl.public_filename %>
 <% end %>
+<%=   will_paginate @rofls %>
